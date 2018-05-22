@@ -1,0 +1,278 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+.bio-content {
+	overflow: hidden;
+}
+
+.featured-img-placeholder{
+	width: 150px;
+	background: #ccc;
+	float: left;
+	margin: 0 20px 20px 0;
+	overflow: hidden;
+}
+
+.featured-img-placeholder img{
+	width: 150px;
+	height: auto;
+}
+
+.img-placeholder{
+	width: 150px;
+ 	/* height: 240px; */
+	background: #fff;
+	float: left;
+	margin: 0 20px 20px 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.img-placeholder img{
+	width: 150px;
+	
+}
+
+a {
+    color: #900021;
+    text-decoration: underline;
+}
+
+.section-parent h2{
+    font-size: 1.75em;
+    color: #333;
+    padding-bottom:10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.featured-bio{
+	overflow: auto;
+	-webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.25);
+	background: #ededed;
+	padding: 1.25em;
+}
+
+#no_results {
+	margin-left: 15%;
+	display:none;
+
+}
+
+.read-more-link {
+	font-family: "Titillium Web",Arial,Helvetica,sans-serif;
+    font-weight: 600;
+    color: #900021;
+    text-decoration: none;
+	text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased !important;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+.read-more-link:hover{
+	text-decoration: none;
+	color: #333;
+}
+.read-more-link:after{
+	    content: "\25BA";
+    color: #ddd;
+    padding-left: 0.25em;
+}
+
+.content-block{
+	display: block;
+}
+
+/* Added to remove margin stepping */
+
+.row{
+	margin-left:0;
+	margin-right:0;
+}
+
+.stafflist-email{
+	font-size:1em;
+}
+.stafflist-name{
+	font-weight:bold; 
+	font-size:1.3em; 
+	font-family:'Titillium Web',Arial,Helvetica,sans-serif;
+	color:#535353;
+}
+
+.stafflist-title{
+	font-weight:bold; 
+	font-size:1.1em; 
+	font-family:'Titillium Web',Arial,Helvetica,sans-serif;
+	color:#949494;
+}
+
+.stafflist-box{
+	min-width:350px !important;
+	min-height:200px;
+	border-bottom: 1px dotted #ccc;
+	margin-bottom:10px;
+}
+
+.zebra {
+	min-height:20px !important;
+	border-bottom: 0px !important; 
+}
+
+.row.zebra { margin-bottom: 0; }
+
+.stafflist-singlelist {
+	min-width:370px !important;
+	background: white;
+	border-bottom:  1px dotted #ccc;
+	margin-bottom: .5em;
+}
+
+#search_field {  
+	max-width: 100% !important; 
+    margin-left: 0% !important;
+    min-width:300px;
+    border-radius: .3em;
+}
+
+#search-row {
+	margin-bottom:1em !important;
+}
+
+#search_result_count {
+	font-size:.8em;
+}
+
+#no_results {
+	width: 150px;
+	text-align:center;
+}
+
+#no_results_col {
+	margin:auto;
+}
+
+ul.alphabet-sort-list  {
+	margin-top:0 !important;
+	margin-bottom:0;
+}
+
+ul { margin: 0 0 !important; }
+
+/*
+.row{
+	padding: 1.5em 0;
+}
+*/
+
+/*.faculty-bios-list .row:nth-child(even) {background: #eee;}
+.faculty-bios-list .row:nth-child(odd) {background: #fff;}
+.white-bg{background: #fff!important;}*/
+
+.staff-list {padding: .4em;}
+.staff-list:nth-child(even) {background: #eee;}
+.staff-list:nth-child(odd) {background: #fff;}
+
+.btn {
+	text-decoration: none;
+}
+
+.alphabetical-sort-list{
+	margin-left: 0;
+	padding-left: 0;
+}
+.alphabetical-sort-list li{
+	display: inline;
+	padding: 5px;
+}
+.alphabet-heading h3{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding-top: 1em;
+	border-top: 1px solid #dedede;
+}
+body{
+	padding-bottom: 100px;
+}
+
+.department-head {
+	display:none;
+}
+
+.txt-btn-jump{
+	background: #770026;
+	color: #fff;
+	text-decoration: none;
+	padding: .4em .8em;
+	border-radius: .3em;
+	border-bottom: 2px solid #FFF;
+	white-space: nowrap;
+	display:inline-block;
+	 
+}
+
+.txt-btn-jump-all{
+	background: #777;
+	color: #fff;
+	text-decoration: none;
+	padding: .4em .8em;
+	border-radius: .3em;
+	border-bottom: 2px solid #FFF;
+	white-space: nowrap;
+	display:none;
+	 
+}
+
+
+.txt-btn-jump:hover{
+	color: #FDF4D2;
+	text-decoration: none;
+	background: #900021;
+	border-bottom: 2px solid #F6B331;
+}
+
+/* iPhone Portrait */
+@media screen 
+  and (device-width: 320px) {
+	.txt-btn-jump{
+		display:block;
+	}
+	
+	.featured-img-placeholder{
+		width: 50px;
+		background: #ccc;
+		float: left;
+		margin: 0 20px 20px 0;
+		overflow: hidden;
+}
+
+	.featured-img-placeholder img{
+		width: 50px;
+		height:auto;
+	}
+
+	.img-placeholder{
+		width: 50px;
+ 		/* height: 240px; */
+ 		height:160px;
+		background: #fff;
+		float: left;
+		margin: 0 20px 20px 0;
+		overflow: hidden;
+	}
+
+	.img-placeholder img{
+		width: 50px;
+	
+	}
+	
+	.stafflist-box{
+		min-width:320px !important;
+		min-height:180px;
+		border-bottom: 1px dotted #ccc;
+		margin-bottom:10px;
+	}
+	
+}

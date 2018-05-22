@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * 
+ *  
+ */
+
+/**
+ *  Implements hook_theme().
+ *  Staff list themes
+ */
+function staff_list_theme() {
+  return array(
+    'stafflist-v3' => array(
+      'template' => 'templates/stafflist-v3',
+      'variables' => array('title' => NULL),
+    ),
+    'stafflist-az' => array(
+      'template' => 'templates/stafflist-az',
+      'variables' => array('title' => NULL),
+    ),
+    'random_theme' => array(
+      'template' => 'templates/rand_list',
+      'variables' => array('title' => NULL),
+    ),
+ 
+ 
+ 
+  );
+}
+
+ /**
+ * Implements hook_ctools_plugin_directory().
+ */
+ 
+ function staff_list_ctools_plugin_directory($owner, $plugin_type) {
+ 	if ($owner == 'ctools' && $plugin_type == 'content_types') {
+		return 'plugins/' . $plugin_type;
+ 	}
+ }
+ 
+ 
+/**
+ * Menu: AHC Staff List settings
+ *
+ */ 
+function staff_list_menu() {
+  $items = array();
+
+  $items['admin/config/ahcstafflist'] = array(
+    'title' => 'AHC Staff List Module Administration',
+    'description' => 'Configuration for AHC Staff List module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('staff_list_global_admin_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+
+/**
+ * Page callback: Current posts settings
+ *
+ * @see staff_list_menu()
+ */
+function staff_list_global_admin_form($form, &$form_state) {
+ 
+	$form['list_options'] = array(
+  		'#type' => 'value',
+  		'#value' => get_unit_parents()
+	);
+
+	$form['units'] = array(
+    	'#title' => t('Parent units of staff lists '),
+    	'#multiple' => TRUE,
+    	'#size' => 10,
+    	'#description' => t('Select from which unit(s) a staff list can be on this site.'),
+    	'#type' => 'select',
+    	'#options' => $form['list_options']['#value'],
+    	'#default_value' => variable_get('units'),
+    	//'#required' => TRUE,
+  	);
+
+  	return system_settings_form($form);
+}
+
+/**
+ * Retrieve parent unit list from web service and deliver in the form of associative array
+ *
+ * @see staff_list_menu()
+ */
+function get_unit_parents(){
+	$response = file_get_contents('https://stafflist-server-goes-here.com/orgweb/get-stafflist-parent-units.php');
+	$response = json_decode($response);
+	
+	$units = array();
+	foreach($response->units as $row){
+		$units[$row->id] = t($row->name);
+	}
+	
+	return $units;
+}

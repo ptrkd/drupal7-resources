@@ -1,0 +1,9 @@
+name = Faculty/Staff List CTools Plugin
+description = Provides an view for an Faculty/Staff List (beta 2) with photo on/off switch, single tab placement, and single tab group to A-Z sort and agglutination
+package = custom modules
+core = 7.x
+
+; NEW LINE
+configure = admin/config/stafflist
+dependencies[] = ctools
+dependencies[] = panels
